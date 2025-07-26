@@ -1,5 +1,5 @@
 ### all assessment
-GET http://localhost:5000/assessments/6883243d865d3435c4e27bab
+GET http://localhost:5000/assessments/6884688a3decdb76aab81061
 
 ### create assessment
 POST http://localhost:5000/assessments
@@ -10,7 +10,7 @@ Content-Type: application/json
 }
 
 ### assessment update by id
-PUT http://localhost:5000/assessments/68833e7856ea27662ecae49b
+PUT http://localhost:5000/assessments/6884688a3decdb76aab81061
 Content-Type: application/json
 
 {

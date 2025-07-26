@@ -4,6 +4,18 @@ import {Request, Response} from "express";
 import {ErrorApi} from "../lib/errorHandler";
 import {AssessmentModel} from "../model/assesment.model";
 
+export const searchAssessment = asyncHandler(async (req: Request, res: Response) => {
+    const {assessment} = req.query;
+    if (!assessment) {
+        throw new ErrorApi(400, "Assessment name is required for search");
+    }
+    const result = await AssessmentModel
+        .find({ name: { $regex: assessment, $options: 'i' } })
+        .exec();
+    res.status(200).json(result);
+});
+
+
 export const getAssessment = asyncHandler(async (req: Request, res: Response) => {
     try {
         const airline = await AssessmentModel.findById(req.params.id);

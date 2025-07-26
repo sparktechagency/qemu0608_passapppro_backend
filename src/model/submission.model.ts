@@ -25,6 +25,7 @@ const submissionSchema: Schema<Submission> = new Schema({
     selectedAirline: {
         type: String,
         required: true,
+        index: true,
     },
     selectedYear: {
         type: Date,

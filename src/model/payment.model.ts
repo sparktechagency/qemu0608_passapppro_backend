@@ -7,7 +7,7 @@ export enum Package {
 
 export interface Payment extends Document {
     transactionId: string;
-    accountNumber: number;
+    accountNumber: string;
     package: string;
 }
 
@@ -15,9 +15,10 @@ const paymentSchema: Schema<Payment> = new Schema({
     transactionId: {
         type: String,
         required: true,
+        unique: true,
     },
     accountNumber: {
-        type: Number,
+        type: String,
         required: true,
     },
     package: {

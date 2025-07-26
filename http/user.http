@@ -1,15 +1,27 @@
+### update profile
+PUT http://localhost:5000/settings/update-profile
 
-### chagne profile
-POST http://localhost:5000/settings/upload-profile
+### change password
+PUT http://localhost:5000/settings/change-password
+Content-Type: application/json
+Cookie: access-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODFmNjU2MzIzNzBjZjViZGJmYmY4MSIsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTc1MzUwMzcwMywiZXhwIjoxNzUzNTA3MzAzfQ.gLYD8zzmWOJ-nbLwLss9wXsvDjS09oIWW7KkUyAiBMg
+
+{
+  "oldPassword": "123456789",
+  "newPassword": "123456789"
+}
+
+### change profile
+PUT http://localhost:5000/settings/upload-profile
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="userId"
+Content-Disposition: form-data; name="avatar"
 
 6883243d865d3435c4e27bab
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="profile"; filename="profile.jpg"
-Content-Type: image/jpeg
+Content-Disposition: form-data; name="avatar"; filename="billal.png"
+Content-Type: image/png
 
 < ./images/billal.png
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--

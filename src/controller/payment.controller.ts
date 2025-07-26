@@ -3,6 +3,22 @@ import {ErrorApi} from "../lib/errorHandler";
 import {PaymentModel} from "../model/payment.model";
 import asyncHandler from "../lib/asyncHandler";
 
+export const searchPayment = asyncHandler(async (req: Request, res: Response) => {
+    const {query} = req.query;
+    if (!query) {
+        throw new ErrorApi(400, "Query is required for search");
+    }
+    const payments = await PaymentModel
+        .find({
+            $or:[
+                { transactionId: { $regex: query, $options: 'i' } },
+                {accountNumber: { $regex: Number(query), $options: 'i' } },
+            ]
+        })
+        .exec();
+    res.status(200).json(payments);
+})
+
 // Create a new payment
 export const createPayment = asyncHandler(async (req: Request, res: Response) => {
     const body = req.body

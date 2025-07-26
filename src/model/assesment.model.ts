@@ -8,6 +8,7 @@ const AssessmentSchema: Schema<Assessment> = new Schema({
     name: {
         type: String,
         required: true,
+        unique: true,
     }
 })
 

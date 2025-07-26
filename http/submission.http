@@ -1,9 +1,9 @@
 ### get-submittions
-GET http://localhost:5000/submission/get
+GET http://localhost:5000/submission
 Content-Type: application/json
 
 ### create-submittion
-POST http://localhost:5000/submission/create
+POST http://localhost:5000/submission
 Content-Type: application/json
 
 {
@@ -14,5 +14,5 @@ Content-Type: application/json
 }
 
 ### create-submittion
-DELETE http://localhost:5000/submission/delete/654413165412012
+DELETE http://localhost:5000/submission/654413165412012
 Content-Type: application/json

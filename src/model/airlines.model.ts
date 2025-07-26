@@ -1,13 +1,14 @@
 import {Document, model, Schema} from 'mongoose'
 
 export interface Airlines extends Document{
-    AirlineName: string;
+    name: string;
 }
 
 const AuthSchema: Schema<Airlines> = new Schema({
-    AirlineName: {
+    name: {
         type: String,
         required: true,
+        unique: true,
     }
 })
 

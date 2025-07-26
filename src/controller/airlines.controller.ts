@@ -4,6 +4,17 @@ import {MongooseError} from "mongoose";
 import {Request, Response} from "express";
 import {ErrorApi} from "../lib/errorHandler";
 
+export const searchAirlines = asyncHandler(async (req: Request, res: Response) => {
+    const {airline} = req.query;
+    if (!airline) {
+        throw new ErrorApi(400, "Airlines name is required for search");
+    }
+    const result = await AirlinesModel
+        .find({ name: { $regex: airline, $options: 'i' } })
+        .exec();
+    res.status(200).json(result);
+});
+
 export const getAirline = asyncHandler(async (req: Request, res: Response) => {
     try {
         const airline = await AirlinesModel.findById(req.params.id);
@@ -27,11 +38,11 @@ export const getAirlines = asyncHandler(async (req: Request, res: Response) => {
 
 export const createAirline = asyncHandler(async (req: Request, res: Response) => {
   try {
-      const { AirlineName } = req.body;
-      if (!AirlineName) throw new ErrorApi(400,  'Airline name is required' )
+      const { name } = req.body;
+      if (!name) throw new ErrorApi(400,  'Airline name is required' )
 
     const airline = await AirlinesModel.create({
-      AirlineName
+      name
     });
 
     res.status(201).json(airline);
@@ -44,8 +55,8 @@ export const createAirline = asyncHandler(async (req: Request, res: Response) =>
 // Update an airline by ID
 export const updateAirline = asyncHandler(async (req: Request, res: Response) => {
   try {
-    const { AirlineName } = req.body;
-    if (!AirlineName) throw new ErrorApi(400,  'Airline name is required' )
+    const { name } = req.body;
+    if (!name) throw new ErrorApi(400,  'Airline name is required' )
 
     const airline = await AirlinesModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!airline) return res.status(404).json({ error: 'Airline not found' });

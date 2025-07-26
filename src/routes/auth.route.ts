@@ -6,7 +6,7 @@ const router = Router()
 
 router.route("/login").post(login)
 router.route("/signup").post(signUp)
-router.route("/refresh-token").get(refreshToken)
+router.route("/refresh-token/:token").get(refreshToken)
 router.route("/forgot-password")
 router.route("/verify-email")
 router.route("/resend-verify-email")

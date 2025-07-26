@@ -1,11 +1,16 @@
 import {Router} from "express";
-import {createSubmission, deleteSubmission} from "../controller/submission.crontroller";
+import {
+    createSubmission,
+    deleteSubmission,
+    getSubmission,
+    searchSubmission
+} from "../controller/submission.crontroller";
 
 const router = Router()
 
-router.route("/")
-router.route("/search")
-router.route("/create").post(createSubmission)
-router.route("/delete/:id").delete(deleteSubmission)
+router.route("/").get(getSubmission)
+router.route("/search").get(searchSubmission)
+router.route("/").post(createSubmission)
+router.route("/:id").delete(deleteSubmission)
 
 export default router

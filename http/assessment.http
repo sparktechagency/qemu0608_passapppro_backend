@@ -1,0 +1,23 @@
+### all assessment
+GET http://localhost:5000/assessments/6883243d865d3435c4e27bab
+
+### create assessment
+POST http://localhost:5000/assessments
+Content-Type: application/json
+
+{
+  "name": "bangladesh"
+}
+
+### assessment update by id
+PUT http://localhost:5000/assessments/68833e7856ea27662ecae49b
+Content-Type: application/json
+
+{
+  "name": "japan"
+}
+
+### assessment delete by id
+DELETE http://localhost:5000/assessments/68833e7856ea27662ecae49b
+
+

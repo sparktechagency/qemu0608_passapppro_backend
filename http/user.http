@@ -1,0 +1,15 @@
+
+### chagne profile
+POST http://localhost:5000/settings/upload-profile
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="userId"
+
+6883243d865d3435c4e27bab
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="profile"; filename="profile.jpg"
+Content-Type: image/jpeg
+
+< ./images/billal.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--

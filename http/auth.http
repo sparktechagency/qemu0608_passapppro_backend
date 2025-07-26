@@ -1,0 +1,26 @@
+### signup
+POST http://localhost:5000/auth/signup
+Content-Type: application/json
+
+{
+  "name": "Billal Hossain",
+  "email": "test@example.com",
+  "password": "12345689"
+}
+
+### login
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "123456789"
+}
+
+### logout
+GET http://localhost:5000/auth/logout
+Cookie: access-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODFmNjU2MzIzNzBjZjViZGJmYmY4MSIsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTc1MzM0Nzc1MywiZXhwIjoxNzUzMzUxMzUzfQ.CdSzoFGLkrCtPpz0mekR_8qsleEDJEYu8rTwsBzK5JE
+
+### refres-token
+GET http://localhost:5000/auth/refresh-token
+Cookie: access-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODFmNjU2MzIzNzBjZjViZGJmYmY4MSIsImlhdCI6MTc1MzM0ODE2MSwiZXhwIjoxNzUzMzUxNzYxfQ.zC9_tbaBtIdBahDYgIMFRJB329lRHzvEYbKmfNzZ20w

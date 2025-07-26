@@ -1,0 +1,18 @@
+### get-submittions
+GET http://localhost:5000/submission/get
+Content-Type: application/json
+
+### create-submittion
+POST http://localhost:5000/submission/create
+Content-Type: application/json
+
+{
+  "deviceId": "654413165412012",
+  "selectedAirline": "test@example.com",
+  "selectedYear": 1753352561313,
+  "assessmentStatus": "PASS"
+}
+
+### create-submittion
+DELETE http://localhost:5000/submission/delete/654413165412012
+Content-Type: application/json

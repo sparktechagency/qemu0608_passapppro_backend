@@ -1,0 +1,18 @@
+### Create a new payment
+POST http://localhost:5000/payment
+Content-Type: application/json
+
+{
+  "transactionId": "TX123456",
+  "accountNumber": 987654321,
+  "package": "MONTHLY"
+}
+
+### Get all payments
+GET http://localhost:5000/payment
+
+### Get payment by ID
+GET http://localhost:5000/payment/688344e62d111e8d3675385c
+
+### Delete payment by ID
+DELETE http://localhost:5000/payment/688344e62d111e8d3675385c

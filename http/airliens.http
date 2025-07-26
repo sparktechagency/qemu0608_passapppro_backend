@@ -1,0 +1,23 @@
+### all airlines
+GET http://localhost:5000/airlines
+
+### create airline
+POST http://localhost:5000/airlines
+Content-Type: application/json
+
+{
+  "AirlineName": "bangladesh"
+}
+
+### airline update by id
+PUT http://localhost:5000/airlines/6883193dfb3ecfeae4709055
+Content-Type: application/json
+
+{
+  "AirlineName": "japan"
+}
+
+### airline delete by id
+DELETE http://localhost:5000/airlines/6883193dfb3ecfeae4709055
+
+

@@ -1,7 +1,6 @@
 import express, {Application} from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import {setupSwagger} from "./config/swagger";
 import {DefaultErrorHandler, NotFoundHandler} from "./lib/errorHandler";
 import submissionRoute from "./routes/submission.route";
 import airelinesRoute from "./routes/airelines.route";
@@ -38,7 +37,6 @@ app.use("/assessments", assessmentsRoute)
 app.use("/payment", paymentRoute)
 app.use("/users", userRoute)
 
-setupSwagger(app)
 
 app.use(DefaultErrorHandler)
 app.use(NotFoundHandler)

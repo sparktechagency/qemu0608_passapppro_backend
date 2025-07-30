@@ -1,5 +1,5 @@
 import app from './app';
-import {PORT} from './config/app.config';
+import {PORT} from './config/env/app.env';
 import ConnectMongo from "./db";
 
 ConnectMongo().then(() => app.listen(PORT, () =>

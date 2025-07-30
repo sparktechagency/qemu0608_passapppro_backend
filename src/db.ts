@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import {MONGO_URI} from "./config/env.config";
+import {MONGO_URI} from "./config/env/auth.env";
 
 const ConnectMongo = async (): Promise<mongoose.Mongoose> => {
   try {

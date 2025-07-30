@@ -1,17 +1,16 @@
 import jwt, {JwtPayload} from "jsonwebtoken";
-import {JWT_ACCESS_EXPIRY, JWT_ACCESS_TOKEN, JWT_REFRESH_TOKEN} from "../config/env.config";
+import {JWT_ACCESS_EXPIRY, JWT_ACCESS_TOKEN, JWT_REFRESH_EXPIRY, JWT_REFRESH_TOKEN} from "../config/env/auth.env";
 
 export class JWT {
   static accessTokenGenerator = (payload: JwtPayload, ) => {
     return jwt.sign(payload, JWT_ACCESS_TOKEN, {
       expiresIn: JWT_ACCESS_EXPIRY,
-
     })
   }
 
   static refreshTokenGenerator = (payload: JwtPayload, ) => {
     return jwt.sign(payload, JWT_REFRESH_TOKEN, {
-      expiresIn: JWT_ACCESS_EXPIRY,
+      expiresIn: JWT_REFRESH_EXPIRY,
     })
   }
 
